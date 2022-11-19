@@ -2,27 +2,26 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+        <link rel="shortcut icon" href="" type="image/x-icon">  
         <meta name="csrf-token" content="{{ csrf_token() }}">
+     
+        <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
 
         <title>{{ \Osiset\ShopifyApp\Util::getShopifyConfig('app_name') }}</title>
         @vite('resources/css/app.css')
-        
-
+        <script src="https://unpkg.com/turbolinks"></script>
+        <!-- <link href="{{mix('css/app.css')}}" rel="stylesheet" data-turbolinks-track="true"> -->
         @yield('styles')
     </head>
 
-    <body>
-        @include('partial.nav')
-        <div class="app-wrapper">
-            <div class="app-content">
-                <main role="main">
-                    @yield('content')
-                </main>
-            </div>
-        </div>
-        @include('partial.footer')
-
-
+    <body class="bg-gray-100 app-wrapper">
+       @include('partial.nav')
+       <div class="h-screen flex flex-row flex-wrap app-content">
+         @include('partial.sidebar')
+         <div class="bg-gray-100 flex-1 p-6 md:mt-16"> 
+           @yield('content')
+         </div>
         @if(\Osiset\ShopifyApp\Util::getShopifyConfig('appbridge_enabled') && \Osiset\ShopifyApp\Util::useNativeAppBridge())
             <script src="https://unpkg.com/@shopify/app-bridge{{ \Osiset\ShopifyApp\Util::getShopifyConfig('appbridge_version') ? '@'.config('shopify-app.appbridge_version') : '' }}"></script>
             <script src="https://unpkg.com/@shopify/app-bridge-utils{{ \Osiset\ShopifyApp\Util::getShopifyConfig('appbridge_version') ? '@'.config('shopify-app.appbridge_version') : '' }}"></script>
@@ -46,7 +45,10 @@
             @include('shopify-app::partials.token_handler')
             @include('shopify-app::partials.flash_messages')
         @endif
-
+       </div>
         @yield('scripts')
-    </body>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="js/scripts.js"></script>
+<!-- end script -->
+  </body>
 </html>
