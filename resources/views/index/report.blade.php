@@ -10,7 +10,7 @@
                 <div class="flex flex-row justify-between items-center">
                     <div class="h6 text-indigo-700 fad fa-shopping-cart"></div>
                     <span class="rounded-full text-white badge bg-teal-400 text-xs">
-                        12%
+                        {{$products}}%
                         <i class="fal fa-chevron-up ml-1"></i>
                     </span>
                 </div>
@@ -19,7 +19,7 @@
                 <!-- bottom -->
                 <div class="mt-8">
                     <h1 class="h5 num-4"></h1>
-                    <p>items sales</p>
+                    <p>Total Products</p>
                 </div>                
                 <!-- end bottom -->
     

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+//add dashborad controller
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['verify.shopify'])->name('home');
 
 
-Route::get('/products', function () {
-    return view('products');
-})->middleware(['verify.shopify'])->name('products');
+Route::group(['middleware' => 'verify.shopify'], function () {
+
+    //route for dashboard from dashboard controller 
+    Route::get('/', [DashboardController::class,'index'])->name('dashboard');
+   
+
+    Route::get('/products', function () {
+        return view('products');
+    })->name('products');
+
+    Route::get('/orders', function () {
+        return view('orders');
+    })->name('orders');
+
+    Route::get('/customers', function () {
+        return view('customers');
+    })->name('customers');
+
+    Route::get('/settings', function () {
+        return view('settings');
+    })->name('settings');
+
+    
+
+});
