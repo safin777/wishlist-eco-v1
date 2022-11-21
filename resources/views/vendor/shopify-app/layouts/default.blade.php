@@ -5,13 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
         <link rel="shortcut icon" href="" type="image/x-icon">  
         <meta name="csrf-token" content="{{ csrf_token() }}">
-     
-        <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
-
+        <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+         <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
         <title>{{ \Osiset\ShopifyApp\Util::getShopifyConfig('app_name') }}</title>
         @vite('resources/css/app.css')
         <script src="https://unpkg.com/turbolinks"></script>
-        <!-- <link href="{{mix('css/app.css')}}" rel="stylesheet" data-turbolinks-track="true"> -->
         @yield('styles')
     </head>
 
@@ -48,7 +46,8 @@
        </div>
         @yield('scripts')
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-        <script src="js/scripts.js"></script>
+        {{-- <script type="text/javascript" src="{{ URL::asset('resources/js/app.js') }}"></script> --}}
+        
 <!-- end script -->
   </body>
 </html>

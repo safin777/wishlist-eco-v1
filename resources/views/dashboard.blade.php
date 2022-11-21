@@ -2,8 +2,10 @@
 
 @section('content')
  @include('index.report')
- 
-
+ <div x-data="{ show: false }">
+    <button @click="show = !show">Show</button>
+    <h1 x-show="show">Hello Alpine.js</h1>
+</div>
 @endsection
 
 @section('scripts')

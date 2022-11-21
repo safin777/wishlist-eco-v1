@@ -1,6 +1,14 @@
-import "./bootstrap";
-var Turbolinks = require("turbolinks");
-Turbolinks.start();
+// import _ from 'lodash';
+// window._ = _;
+
+import "bootstrap";
+
+// Add this
+import Alpine from "alpinejs";
+window.Alpine = Alpine;
+Alpine.start();
+
+alert("Hello world");
 
 // get the close btn
 var alert_button = document.getElementsByClassName("alert-btn-close");

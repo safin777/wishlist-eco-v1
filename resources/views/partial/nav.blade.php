@@ -29,18 +29,7 @@
         <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 pl-4" href="/">Dashboard</a>
         <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 pl-4" href="/products">Products</a>
         <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 pl-4" href="/customers">Customers</a>
-        <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 pl-4" href="/settings">Settings</a>
-        <!-- <ul class="navbar-nav flex  pl-0 list-style-none mr-auto">
-              <li class="nav-item p-2">
-                
-              </li>
-              <li class="nav-item p-2">
-                <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">Team</a>
-              </li>
-              <li class="nav-item p-2">
-                <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" href="#">Projects</a>
-              </li>
-        </ul>     -->
+        <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 pl-4" href="/settings">Settings</a> 
       </div>
       
       
