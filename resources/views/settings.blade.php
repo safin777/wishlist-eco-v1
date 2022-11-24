@@ -1,8 +1,14 @@
 @extends('shopify-app::layouts.default')
 
 @section('content')
-    <!-- You are: (shop domain name) -->
-  <h1>Settings</h1>
+  
+<div>
+    <form method="GET" action="{{ url('submit/apidata') }}">
+        @csrf
+    <button type="submit" class="p-4 bg-gray-800 text-blue-100">Add Progress bar in Cart</a>
+   </form>
+</div>
+
 @endsection
 
 @section('scripts')

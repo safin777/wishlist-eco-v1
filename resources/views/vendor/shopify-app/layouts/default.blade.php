@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
-        <link rel="shortcut icon" href="" type="image/x-icon">  
+        <link rel="shortcut icon" href="" type="image/x-icon"> 
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
         <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
          <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
         <title>{{ \Osiset\ShopifyApp\Util::getShopifyConfig('app_name') }}</title>

@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 //add dashborad controller
 use App\Http\Controllers\DashboardController;
+//add product controller
+use App\Http\Controllers\ProductController;
+//settings controller
+use App\Http\Controllers\SettingController;
+//use Auth 
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +27,14 @@ Route::group(['middleware' => 'verify.shopify'], function () {
 
     //route for dashboard from dashboard controller 
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
-   
+    //route for products from product controller
+    Route::get('/products', [ProductController::class,'index'])->name('products');
 
-    Route::get('/products', function () {
-        return view('products');
-    })->name('products');
+    //all settings controller routes
+    Route::get('/settings', [SettingController::class,'index'])->name('settings');
+
+    Route::get('submit/apidata',[SettingController::class,'addProgressbarScriptTag']);
+        
 
     Route::get('/orders', function () {
         return view('orders');
@@ -34,10 +43,7 @@ Route::group(['middleware' => 'verify.shopify'], function () {
     Route::get('/customers', function () {
         return view('customers');
     })->name('customers');
-
-    Route::get('/settings', function () {
-        return view('settings');
-    })->name('settings');
+    
 
     
 

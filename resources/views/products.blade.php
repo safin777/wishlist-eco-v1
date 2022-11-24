@@ -2,7 +2,14 @@
 
 @section('content')
     <!-- You are: (shop domain name) -->
-    <h1>Products</h1>
+<?php
+ $products = $shop_product->products;  
+
+?>
+<div>
+        @include('products.product_table')
+</div>
+
 @endsection
 
 @section('scripts')
