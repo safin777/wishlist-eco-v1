@@ -23,8 +23,10 @@ var productDetailPageWithBenefits = {
     },
     mainJS: function () {
         const progressbarAdd = () => {
-            let cart = document.querySelector(".js-contents");
             
+            // alert(min, max);
+            let cart = document.querySelector(".js-contents");
+
             let progressbar = `
             <div class="progress_container">
                 <progress id="progress_cart" value="0" max="100"></progress> <span id="progress_percent"> 100%</span>
@@ -35,7 +37,7 @@ var productDetailPageWithBenefits = {
             if (pro) {
                 let max = 50;
                 let low = 0;
-
+                
                 let get_subtotal = document.querySelector(
                     ".totals__subtotal-value"
                 ).innerText;

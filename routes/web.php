@@ -7,8 +7,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 //settings controller
 use App\Http\Controllers\SettingController;
+//progress controller
+use App\Http\Controllers\ProgressController;
 //use Auth 
 use Illuminate\Support\Facades\Auth;
+//use Bar controller
+use App\Http\Controllers\BarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +37,7 @@ Route::group(['middleware' => 'verify.shopify'], function () {
     //all settings controller routes
     Route::get('/settings', [SettingController::class,'index'])->name('settings');
 
-    Route::get('submit/apidata',[SettingController::class,'addProgressbarScriptTag']);
+    Route::get('store/apidata',[BarController::class,'store'])->name('store.apidata');
     Route::get('delete/apidata/{id}',[SettingController::class,'deleteProgressbarScriptTag']);
         
 

@@ -12,7 +12,7 @@ use Osiset\ShopifyApp\Traits\ShopModel;
 
 class User extends Authenticatable implements IShopModel
 {
-    use Notifiable, ShopModel;
+    use Notifiable, ShopModel, HasApiTokens;
     // HasApiTokens, HasFactory,
 
     /**

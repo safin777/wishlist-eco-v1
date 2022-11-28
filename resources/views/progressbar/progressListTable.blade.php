@@ -1,6 +1,8 @@
 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
     <div class="flex justify-between items-center pb-4">
-        <form method="GET" action="{{ url('submit/apidata') }}">
+        <form method="GET" action="{{ url('store/apidata') }}">
+            <input type="hidden" id="max_value" value="{{ $max }}">
+            <input type="hidden" id="min_value" value="{{ $min }}">
             @csrf
         <button type="submit" class="p-4 bg-gray-800 text-blue-100">Add Progress bar in Cart</button>
        </form>

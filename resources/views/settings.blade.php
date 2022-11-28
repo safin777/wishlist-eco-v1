@@ -2,18 +2,13 @@
 
 @section('content')
 <?php
- $scripts = $shop_script_tag_api->script_tags;  
+ $scripts = $shop_script_tag_api->script_tags; 
+ $max = $ma;
+ $min = $mi;
 ?>
 
 @include('progressbar.progressListTable')
-  
-{{-- <div class="flex">
-    
-   <form method="GET" action="{{ url('delete/apidata') }}">
-    @csrf
-    <button type="submit" class="p-4 bg-red-800 text-blue-100">Remove Progress bar in Cart</button>
-   </form>
-</div> --}}
+
 
 
 @endsection
