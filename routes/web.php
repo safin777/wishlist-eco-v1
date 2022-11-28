@@ -34,6 +34,7 @@ Route::group(['middleware' => 'verify.shopify'], function () {
     Route::get('/settings', [SettingController::class,'index'])->name('settings');
 
     Route::get('submit/apidata',[SettingController::class,'addProgressbarScriptTag']);
+    Route::get('delete/apidata/{id}',[SettingController::class,'deleteProgressbarScriptTag']);
         
 
     Route::get('/orders', function () {
@@ -43,8 +44,4 @@ Route::group(['middleware' => 'verify.shopify'], function () {
     Route::get('/customers', function () {
         return view('customers');
     })->name('customers');
-    
-
-    
-
 });

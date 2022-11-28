@@ -1,13 +1,20 @@
 @extends('shopify-app::layouts.default')
 
 @section('content')
+<?php
+ $scripts = $shop_script_tag_api->script_tags;  
+?>
+
+@include('progressbar.progressListTable')
   
-<div>
-    <form method="GET" action="{{ url('submit/apidata') }}">
-        @csrf
-    <button type="submit" class="p-4 bg-gray-800 text-blue-100">Add Progress bar in Cart</a>
+{{-- <div class="flex">
+    
+   <form method="GET" action="{{ url('delete/apidata') }}">
+    @csrf
+    <button type="submit" class="p-4 bg-red-800 text-blue-100">Remove Progress bar in Cart</button>
    </form>
-</div>
+</div> --}}
+
 
 @endsection
 
