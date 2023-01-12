@@ -1,10 +1,7 @@
 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
     <div class="flex justify-between items-center pb-4">
         <form method="GET" action="{{ url('store/apidata') }}">
-            <input type="hidden" id="max_value" value="{{ $max }}">
-            <input type="hidden" id="min_value" value="{{ $min }}">
-            @csrf
-        <button type="submit" class="p-4 bg-gray-800 text-blue-100">Add Progress bar in Cart</button>
+         <button type="submit" class="p-4 bg-gray-800 text-blue-100">Add Progress bar in Cart</button>
        </form>
         <div>
             <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">

@@ -37,7 +37,8 @@ Route::group(['middleware' => 'verify.shopify'], function () {
     //all settings controller routes
     Route::get('/settings', [SettingController::class,'index'])->name('settings');
 
-    Route::get('store/apidata',[BarController::class,'store'])->name('store.apidata');
+    //Route::get('store/apidata',[BarController::class,'store'])->name('store.apidata');
+    Route::get('store/apidata',[SettingController::class,'addProgressbarScriptTag'])->name('store.apidata');
     Route::get('delete/apidata/{id}',[SettingController::class,'deleteProgressbarScriptTag']);
         
 

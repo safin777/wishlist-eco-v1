@@ -46,7 +46,7 @@ class BarController extends Controller
         $bar->save();
 
         $themes = $shop->api()->rest('GET', '/admin/script_tags.json');
-        $snippet = "https://a2ee-202-53-164-153.in.ngrok.io/scripttag/progressbar.js";
+        $snippet = "https://9849-202-53-164-153.in.ngrok.io/scripttag/progressbar.js";
         $array = array('script_tag' => array('event' => 'onload', 'src' => $snippet));
         $shop->api()->rest('POST', '/admin/api/2022-10/script_tags.json', $array);
         

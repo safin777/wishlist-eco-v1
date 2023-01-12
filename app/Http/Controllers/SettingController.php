@@ -25,26 +25,23 @@ class SettingController extends Controller
 
     //add new script tag in script_tasg_api 
 
-    // public function addProgressbarScriptTag(Request $request )
-    // {
-    //     $shop = Auth::user();
-    //     $ma = 450;
-    //     $mi = 20;
-    //     $themes = $shop->api()->rest('GET', '/admin/script_tags.json');
-    //     // get active theme id
-    //     $snippet = "https://a2ee-202-53-164-153.in.ngrok.io/scripttag/progressbar.js";
-    //     // Data to pass to our rest api request
-    //     $array = array('script_tag' => array('event' => 'onload', 'src' => $snippet));
-    //     $shop->api()->rest('POST', '/admin/api/2022-10/script_tags.json', $array);
-    //     return redirect()->route('settings');
-    // }
+    public function addProgressbarScriptTag(Request $request )
+    {
+        $shop = Auth::user();
+        // get active theme id
+        $snippet = "https://9849-202-53-164-153.in.ngrok.io/scripttag/progressbar.js";
+        // Data to pass to our rest api request
+        $array = array('script_tag' => array('event' => 'onload', 'src' => $snippet));
+        $shop->api()->rest('POST', '/admin/api/2022-10/script_tags.json', $array);
+        return redirect()->route('settings');
+    }
 
     public function deleteProgressbarScriptTag(Request $id)
     {   
 
         $script_id = $id->id;
         $shop = Auth::user();
-        $snippet = "https://a2ee-202-53-164-153.in.ngrok.io/scripttag/progressbar.js";
+        $snippet = "https://9849-202-53-164-153.in.ngrok.io/scripttag/progressbar.js";
         $array = array('script_tag' => array('event' => 'onload', 'src' => $snippet));
         $shop->api()->rest('DELETE', '/admin/api/2022-10/script_tags/'.$script_id.'.json',$array);
         return redirect()->route('settings');

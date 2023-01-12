@@ -26,7 +26,7 @@ var productDetailPageWithBenefits = {
             
             // alert(min, max);
             let cart = document.querySelector(".js-contents");
-
+            
             let progressbar = `
             <div class="progress_container">
                 <progress id="progress_cart" value="0" max="100"></progress> <span id="progress_percent"> 100%</span>
@@ -34,6 +34,7 @@ var productDetailPageWithBenefits = {
             cart.insertAdjacentHTML("afterbegin", progressbar);
 
             let pro = document.querySelector("#progress_cart");
+            
             if (pro) {
                 let max = 50;
                 let low = 0;
@@ -42,7 +43,8 @@ var productDetailPageWithBenefits = {
                     ".totals__subtotal-value"
                 ).innerText;
                 //slice a string to get the number
-                let subtotal = get_subtotal.slice(2, -3);
+                let subtotal = get_subtotal.slice(1, -3);
+                console.log(subtotal);
                 let percent = (subtotal / max) * 100;
                 let percent_round = Math.round(percent);
                 if (subtotal > max) {
@@ -65,8 +67,6 @@ var productDetailPageWithBenefits = {
 
         let observer = new MutationObserver(function (mutations) {
             mutations.forEach(function (mutation) {
-                //document.querySelector("#progress_cart").remove();
-                //adding this function after 2second to make sure the cart is loaded
                 let btn = document.querySelectorAll(".quantity__button");
                 // make  event listener for each button
                 btn.forEach((item) => {
@@ -98,3 +98,6 @@ var productDetailPageWithBenefits = {
         setTimeout(pollForWithBenefits, 25);
     }
 })();
+
+
+
